@@ -16,10 +16,13 @@ public class MovimientoPJ : MonoBehaviour
 
     public CapsuleCollider col;
 
+    
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>(); 
         col = GetComponent<CapsuleCollider>();
+        
     }
 
     void Update()
