@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Ground2D
+  - TriggerSideScroller
+  - Trigger3dPerson
   layers:
   - Default
   - TransparentFX
@@ -15,7 +18,7 @@ TagManager:
   - 
   - 
   - Personajes
-  - 
+  - Ground
   - 
   - 
   - 

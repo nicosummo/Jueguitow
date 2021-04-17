@@ -36,7 +36,7 @@ public class MovimientoPJ : MonoBehaviour
 
     void Update()
     {
-        if (camAndControlsSwitch.GetComponent<CamAndControlsSwitch>().war)
+        if (camAndControlsSwitch.GetComponent<CamAndControlsSwitch>().war3d)
         {
             WarriorMovement();
             Jump();
@@ -52,7 +52,7 @@ public class MovimientoPJ : MonoBehaviour
         //Movimiento
         float _horizontal = Input.GetAxisRaw("Horizontal");
         float _vertical = Input.GetAxisRaw("Vertical");
-        Vector3 playerMovement = new Vector3(_horizontal, 0f, _vertical);
+        Vector3 playerMovement = new Vector3(_horizontal, 0f, _vertical).normalized;
         //transform.Translate(moveDir.normalized * _velocidad * Time.deltaTime, Space.World);
 
         //Rotacion

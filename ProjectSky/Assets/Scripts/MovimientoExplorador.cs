@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -18,8 +19,10 @@ public class MovimientoExplorador : MonoBehaviour
     public Rigidbody        rb;
 
     public Transform        cam;
+
     Vector3                 moveDir;
-    public GameObject camAndControlsSwitch;
+    public GameObject       camAndControlsSwitch;
+    
     
 
     
@@ -35,15 +38,12 @@ public class MovimientoExplorador : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (camAndControlsSwitch.GetComponent<CamAndControlsSwitch>().Exp)
+        if (camAndControlsSwitch.GetComponent<CamAndControlsSwitch>().Exp3d && camAndControlsSwitch.GetComponent<CamAndControlsSwitch>().es3d)
         {
             ExplorerMovement();
             Jump();
-            cam = Camera.main.transform;
         }
         
-        //ExplorerMovement();
-        //Jump();
     }
 
     void ExplorerMovement()
@@ -65,9 +65,11 @@ public class MovimientoExplorador : MonoBehaviour
             float _angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetAngle, ref _turnSmoothVelocity, _rotationSpeed);
             transform.rotation = Quaternion.Euler(0f, _angle, 0f);
             moveDir = Quaternion.Euler(0f, _targetAngle, 0f) * Vector3.forward;
-            transform.Translate(moveDir * _velocidad * Time.deltaTime, Space.World);
+            transform.Translate(moveDir.normalized * _velocidad * Time.deltaTime, Space.World);
         }
     }
+
+    
 
     void Jump() //doble salto
     {
