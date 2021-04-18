@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class CamAndControlsSwitch : MonoBehaviour
 {
@@ -49,7 +50,12 @@ public class CamAndControlsSwitch : MonoBehaviour
                 vcam.Follow = transformExplorador;
 
             }
-            
+
+            exploradorScript.GetComponent<NavMeshAgent>().enabled = false;
+            exploradorScript.GetComponent<FollowPlayer>().enabled = false;
+            guerreroScript.GetComponent<NavMeshAgent>().enabled = true;
+            guerreroScript.GetComponent<FollowPlayer>().enabled = true;
+
             //exploradorScript.GetComponent<MovimientoExplorador>().enabled = true;
             //guerreroScript.GetComponent<MovimientoPJ>().enabled = false;
             Exp3d = true;
@@ -74,6 +80,11 @@ public class CamAndControlsSwitch : MonoBehaviour
                 vcam.Follow = transformGuerrero;
 
             }
+
+            exploradorScript.GetComponent<NavMeshAgent>().enabled = true;
+            exploradorScript.GetComponent<FollowPlayer>().enabled = true;
+            guerreroScript.GetComponent<NavMeshAgent>().enabled = false;
+            guerreroScript.GetComponent<FollowPlayer>().enabled = false;
             
             //exploradorScript.GetComponent<MovimientoExplorador>().enabled = false;
             //guerreroScript.GetComponent<MovimientoPJ>().enabled = true;
