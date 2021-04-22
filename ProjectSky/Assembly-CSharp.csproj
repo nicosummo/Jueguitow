@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\CamAndControlsSwitch.cs" />
     <Compile Include="Assets\Scripts\CamaraPerspectivas.cs" />
     <Compile Include="Assets\Scripts\FollowPlayer.cs" />
+    <Compile Include="Assets\Scripts\Menu\CargadorNivel.cs" />
     <Compile Include="Assets\Scripts\Menu\LevelManager.cs" />
     <Compile Include="Assets\Scripts\MovimientoExplorador.cs" />
     <Compile Include="Assets\Scripts\MovimientoPJ.cs" />
