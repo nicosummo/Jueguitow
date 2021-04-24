@@ -6,10 +6,10 @@ using UnityEngine;
 
 public class MovimientoPJ : MonoBehaviour
 {
-    public float            _velocidad = 6f;
+    public float            _velocidad                  = 6f;
     public float            _rotationSpeed;
     float                   _turnSmoothVelocity;
-    public float            _fuerzaSalto = 7f;
+    public float            _fuerzaSalto                = 7f;
     bool                    isGrounded;
 
     public Rigidbody        rb;
@@ -21,11 +21,13 @@ public class MovimientoPJ : MonoBehaviour
     public Transform        cam;
     Vector3                 moveDir;
     public GameObject       camAndControlsSwitch;
+
+    public Animator         animator;
+    public string           movementSpeedParameterName  = "MovementSpeed";
+
+    public WarriorAttacks   warriorAttacks;
     
-    
-
-
-
+   
     private void Start()
     {
         rb = GetComponent<Rigidbody>(); 
@@ -41,7 +43,13 @@ public class MovimientoPJ : MonoBehaviour
             WarriorMovement();
             Jump();
             cam = Camera.main.transform;
+
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                warriorAttacks.Attack();
+            }
         }
+        
         
         //WarriorMovement();
         //Jump();
@@ -53,6 +61,10 @@ public class MovimientoPJ : MonoBehaviour
         float _horizontal = Input.GetAxisRaw("Horizontal");
         float _vertical = Input.GetAxisRaw("Vertical");
         Vector3 playerMovement = new Vector3(_horizontal, 0f, _vertical).normalized;
+
+        animator.SetFloat(movementSpeedParameterName, playerMovement.magnitude);
+
+        
         //transform.Translate(moveDir.normalized * _velocidad * Time.deltaTime, Space.World);
 
         //Rotacion
