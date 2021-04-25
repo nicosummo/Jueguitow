@@ -382,12 +382,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 152247874}
   attackPoint: {fileID: 427590983}
-  attackRange: 2
+  _attackRange: 0.5
   EnemyLayers:
     serializedVersion: 2
     m_Bits: 1024
   attackDamage: 2
   heavyAttackDamage: 5
+  chargeAttackDamage: 10
+  _timer: 0
+  _startTimer: 3
 --- !u!1 &185420843
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,7 +743,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.816156, y: 1}
+    m_SensorSize: {x: 0.4573991, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -812,7 +815,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &572948837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1528,6 +1531,7 @@ GameObject:
   m_Component:
   - component: {fileID: 756246405}
   - component: {fileID: 756246406}
+  - component: {fileID: 756246407}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -1561,6 +1565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fea524ba5e80558488ae1796b7a275e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explorador: 0
   camExplorador: {fileID: 1772440856}
   camGuerrero: {fileID: 1907886847}
   camSideScroller: {fileID: 505263828}
@@ -1572,6 +1577,21 @@ MonoBehaviour:
   transformGuerrero: {fileID: 152247870}
   es3d: {fileID: 631254120}
   vcam: {fileID: 505263829}
+--- !u!114 &756246407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756246404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dac5c96fd104be243b61c68489bd5751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelExplorador: {fileID: 576050239}
+  panelGuerrero: {fileID: 1576992416}
+  managerScript: {fileID: 756246404}
 --- !u!1 &810492221
 GameObject:
   m_ObjectHideFlags: 0

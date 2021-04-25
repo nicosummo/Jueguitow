@@ -7,7 +7,7 @@ using UnityEngine.AI;
 
 public class CamAndControlsSwitch : MonoBehaviour
 {
-    bool                        explorador;
+    public bool                        explorador;
 
     public GameObject           camExplorador;
     public GameObject           camGuerrero;
