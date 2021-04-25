@@ -536,12 +536,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 152247874}
   attackPoint: {fileID: 427590983}
-  attackRange: 2
+  _attackRange: 0.5
   EnemyLayers:
     serializedVersion: 2
     m_Bits: 1024
   attackDamage: 2
   heavyAttackDamage: 5
+  chargeAttackDamage: 10
+  _timer: 2
+  _startTimer: 2
 --- !u!1 &193880960
 GameObject:
   m_ObjectHideFlags: 3
@@ -821,7 +824,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.9814323, y: 1}
+    m_SensorSize: {x: 0.7506631, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1037,7 +1040,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 4
+  m_StoppingDistance: 6
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

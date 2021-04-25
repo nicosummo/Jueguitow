@@ -52,6 +52,22 @@ public class MovimientoPJ : MonoBehaviour
             {
                 warriorAttacks.HeavyAttack();
             }
+            else if (Input.GetKey(KeyCode.Q) && warriorAttacks._timer >= 0)
+            {
+                
+                warriorAttacks.Timer();
+                
+            }
+            else if (Input.GetKeyUp(KeyCode.Q) && warriorAttacks._timer <= 0)
+            {
+                warriorAttacks.ChargeAttack();
+                
+
+            }
+            else if (Input.GetKeyUp(KeyCode.Q) &&  warriorAttacks._timer >= 0)
+            {
+                warriorAttacks.ChargingFailed();
+            }
         }
         
         
