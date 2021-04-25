@@ -48,6 +48,10 @@ public class MovimientoPJ : MonoBehaviour
             {
                 warriorAttacks.Attack();
             }
+            else if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                warriorAttacks.HeavyAttack();
+            }
         }
         
         

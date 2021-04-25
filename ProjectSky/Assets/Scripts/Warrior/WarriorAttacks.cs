@@ -12,12 +12,13 @@ public class WarriorAttacks : MonoBehaviour
 
     public int attackDamage = 2;
 
+    public int heavyAttackDamage = 4;
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            Attack();
-        }
+        HeavyAttack();
+
+
     }
 
 
@@ -40,5 +41,18 @@ public class WarriorAttacks : MonoBehaviour
             return;
         }
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+    public void HeavyAttack()
+    {
+        animator.SetTrigger("warHeavyAttack");
+
+        Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, EnemyLayers);
+
+        foreach(Collider enemy in hitEnemies)
+        {
+            enemy.GetComponent<Enemy1>().TakeDamage(heavyAttackDamage);
+        }
+
     }
 }
