@@ -22,8 +22,10 @@ public class MovimientoExplorador : MonoBehaviour
 
     Vector3                 moveDir;
     public GameObject       camAndControlsSwitch;
-    
-    
+
+    //
+    public GameObject HUDExplorador;
+    //
 
     
 

@@ -8,6 +8,7 @@ TagManager:
   - Ground2D
   - TriggerSideScroller
   - Trigger3dPerson
+  - CosasGuerrero
   layers:
   - Default
   - TransparentFX

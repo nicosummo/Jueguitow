@@ -26,6 +26,7 @@ public class MovimientoPJ : MonoBehaviour
     public string           movementSpeedParameterName  = "MovementSpeed";
 
     public WarriorAttacks   warriorAttacks;
+
     
    
     private void Start()
@@ -33,6 +34,7 @@ public class MovimientoPJ : MonoBehaviour
         rb = GetComponent<Rigidbody>(); 
         col = GetComponent<CapsuleCollider>();
         
+       
         
     }
 
