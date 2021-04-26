@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Enemy1.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\ScriptAraña.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\ScriptBigEnemy.cs" />
     <Compile Include="Assets\Scripts\HUD\HPExplorador.cs" />
     <Compile Include="Assets\Scripts\HUD\HPGuerrero.cs" />
     <Compile Include="Assets\Scripts\HUD\SwitchHUD.cs" />

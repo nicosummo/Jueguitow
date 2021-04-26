@@ -39,6 +39,7 @@ public class WarriorAttacks : MonoBehaviour
         foreach(Collider enemy in hitEnemies)
         {
             enemy.GetComponent<ScriptAraña>().TakeDamage(attackDamage);
+           
         }
     }
 
@@ -59,7 +60,8 @@ public class WarriorAttacks : MonoBehaviour
 
         foreach(Collider enemy in hitEnemies)
         {
-            enemy.GetComponent<Enemy1>().TakeDamage(heavyAttackDamage);
+            enemy.GetComponent<ScriptAraña>().TakeDamage(heavyAttackDamage);
+            
         }
 
     }
@@ -77,6 +79,7 @@ public class WarriorAttacks : MonoBehaviour
             foreach (Collider enemy in hitEnemies)
             {
                 enemy.GetComponent<ScriptAraña>().TakeDamage(chargeAttackDamage);
+
             }
         }
     }
