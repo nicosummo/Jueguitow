@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy1 : MonoBehaviour
 {
-    public int maxHP = 10;
+    public int maxHP = 20;
     int currentHP;
 
    
@@ -29,6 +29,6 @@ public class Enemy1 : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("Murio!");
+        Debug.Log("Moriste!");
     }
 }

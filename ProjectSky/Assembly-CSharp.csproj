@@ -64,7 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Enemy1.cs" />
-    <Compile Include="Assets\Scripts\Explorador\MovimientoExplorador.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\ScriptAraña.cs" />
     <Compile Include="Assets\Scripts\HUD\HPExplorador.cs" />
     <Compile Include="Assets\Scripts\HUD\HPGuerrero.cs" />
     <Compile Include="Assets\Scripts\HUD\SwitchHUD.cs" />
@@ -73,9 +73,11 @@
     <Compile Include="Assets\Scripts\Managers\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\Menu\CargadorNivel.cs" />
     <Compile Include="Assets\Scripts\Menu\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\Players\Explorador\MovimientoExplorador.cs" />
+    <Compile Include="Assets\Scripts\Players\TakeDamage.cs" />
+    <Compile Include="Assets\Scripts\Players\Warrior\MovimientoPJ.cs" />
+    <Compile Include="Assets\Scripts\Players\Warrior\WarriorAttacks.cs" />
     <Compile Include="Assets\Scripts\PruebaEnemigoHP.cs" />
-    <Compile Include="Assets\Scripts\Warrior\MovimientoPJ.cs" />
-    <Compile Include="Assets\Scripts\Warrior\WarriorAttacks.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
