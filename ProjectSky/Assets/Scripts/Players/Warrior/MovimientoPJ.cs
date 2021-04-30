@@ -126,6 +126,10 @@ public class MovimientoPJ : MonoBehaviour
             isGrounded = true;
             
         }
+        else if(collision.gameObject.tag == "Ground2D") //salto en el plano 2D tmb
+        {
+            isGrounded = true;
+        }
     }
 
     

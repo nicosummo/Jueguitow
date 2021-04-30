@@ -97,11 +97,20 @@ public class MovimientoExplorador : MonoBehaviour
             isGrounded = true;
             jumpAllowed = defaultJumpAllowed;
         }
+        else if (collision.gameObject.tag == "Ground2D") //salto en la plataforma 2D tmb
+        {
+            isGrounded = true;
+            jumpAllowed = defaultJumpAllowed;
+        }
     }
 
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.tag == "Ground")
+        {
+            isGrounded = false;
+        }
+        else if (collision.gameObject.tag == "Ground2D") // salto en la plataforma 2D tmb
         {
             isGrounded = false;
         }
