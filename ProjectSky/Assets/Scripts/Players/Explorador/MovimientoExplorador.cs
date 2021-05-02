@@ -11,6 +11,10 @@ public class MovimientoExplorador : MonoBehaviour
     float                   _turnSmoothVelocity;
     public float            _fuerzaSalto = 7f;
 
+    //animaciones
+    public Animator         animatorExp;
+    public string           movementSpeedParameterName = "MovementSpeedExp";
+
     public int              defaultJumpAllowed = 1;
     int                     jumpAllowed;
 
@@ -23,9 +27,8 @@ public class MovimientoExplorador : MonoBehaviour
     Vector3                 moveDir;
     public GameObject       camAndControlsSwitch;
 
-    //
     public GameObject HUDExplorador;
-    //
+    
 
     
 
@@ -55,6 +58,9 @@ public class MovimientoExplorador : MonoBehaviour
         float _vertical = Input.GetAxisRaw("Vertical");
         Vector3 playerMovement = new Vector3(_horizontal, 0f, _vertical).normalized;
         //transform.Translate(moveDir * _velocidad * Time.deltaTime, Space.World);
+
+        //Parametro para las animaciones
+        animatorExp.SetFloat(movementSpeedParameterName, playerMovement.magnitude);
 
         //Rotacion
         if (playerMovement != Vector3.zero)
