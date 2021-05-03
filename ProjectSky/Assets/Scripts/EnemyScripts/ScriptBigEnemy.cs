@@ -18,7 +18,7 @@ public class ScriptBigEnemy : MonoBehaviour
 
 
     public int maxHP = 4;
-    int currentHP;
+    public int currentHP;
 
     //Patrullaje
     public Vector3 walkPoint;
@@ -131,5 +131,6 @@ public class ScriptBigEnemy : MonoBehaviour
         anim.SetTrigger("Death");
         Destroy(gameObject, 5f);
         Debug.Log("Murio!");
+        AudioManagerScript.PlaySound("BigMonsterDeath");
     }
 }

@@ -18,7 +18,7 @@ public class ScriptAraña : MonoBehaviour
 
 
     public int maxHP = 4;
-    int currentHP;
+    public int currentHP;
 
     //Patrullaje
     public Vector3 walkPoint;
