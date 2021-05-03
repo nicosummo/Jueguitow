@@ -15,9 +15,9 @@ public class ScriptBigEnemy : MonoBehaviour
 
     public Animator anim;
 
+    static EnemyHP HP; 
 
-
-    public int maxHP = 4;
+    public int maxHP = 10;
     public int currentHP;
 
     //Patrullaje
@@ -47,6 +47,7 @@ public class ScriptBigEnemy : MonoBehaviour
     private void Start()
     {
         currentHP = maxHP;
+        HP = GetComponent<EnemyHP>();
     }
 
     private void Update()
@@ -114,9 +115,9 @@ public class ScriptBigEnemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHP -= damage;
+        //currentHP -= damage;
 
-
+        HP.curHP -= damage;
 
         if (currentHP <= 0)
         {
@@ -131,6 +132,6 @@ public class ScriptBigEnemy : MonoBehaviour
         anim.SetTrigger("Death");
         Destroy(gameObject, 5f);
         Debug.Log("Murio!");
-        AudioManagerScript.PlaySound("BigMonsterDeath");
+        AudioBigMonster.PlaySound("BigMonsterDeath");
     }
 }

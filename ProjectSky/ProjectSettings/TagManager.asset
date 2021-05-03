@@ -9,6 +9,7 @@ TagManager:
   - TriggerSideScroller
   - Trigger3dPerson
   - CosasGuerrero
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -15,7 +15,8 @@ public class ScriptAraña : MonoBehaviour
 
     public Animator         anim;
 
-
+    public AudioSource      audioSource;
+    public AudioClip        deathSound;
 
     public int maxHP = 4;
     public int currentHP;
@@ -129,7 +130,9 @@ public class ScriptAraña : MonoBehaviour
     {
         navAgent.speed = 0f;
         anim.SetTrigger("Death");
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 2f);
         Debug.Log("Murio!");
+        audioSource.PlayOneShot(deathSound);
+        
     }
 }

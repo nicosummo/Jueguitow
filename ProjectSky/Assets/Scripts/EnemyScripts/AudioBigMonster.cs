@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class AudioBigMonster : MonoBehaviour
 {
-    public GameObject scriptMonstruo;
+    public static AudioClip bigMonsterDeathSound;
+    static AudioSource audioSource;
 
-    private void Update()
+    private void Start()
     {
-        if (scriptMonstruo.GetComponent<ScriptBigEnemy>().currentHP <= 0)
+        bigMonsterDeathSound = Resources.Load<AudioClip>("BigMonsterDeath");
+
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    public static void PlaySound(string clip)
+    {
+        switch (clip)
         {
-            AudioManagerScript.PlaySound("BigMonsterDeath");
-        }   
+            case "BigMonsterDeath":
+                audioSource.PlayOneShot(bigMonsterDeathSound);
+                break;
+        }
     }
 }

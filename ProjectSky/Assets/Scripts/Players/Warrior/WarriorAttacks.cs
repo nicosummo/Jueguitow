@@ -17,9 +17,15 @@ public class WarriorAttacks : MonoBehaviour
     public float _timer;
     public float _startTimer = 3f;
 
+    public AudioSource audioSource;
+    public AudioClip swordAudio;
+
+    
+
     private void Start()
     {
         _timer = _startTimer;
+        swordAudio = Resources.Load<AudioClip>("Sword");
     }
 
     private void Update()
@@ -29,6 +35,7 @@ public class WarriorAttacks : MonoBehaviour
 
     }
 
+    
 
     public void Attack()
     {
@@ -36,9 +43,12 @@ public class WarriorAttacks : MonoBehaviour
 
         Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, _attackRange, EnemyLayers);
 
-        foreach(Collider enemy in hitEnemies)
+        audioSource.PlayOneShot(swordAudio);
+
+        foreach (Collider enemy in hitEnemies)
         {
             enemy.GetComponent<ScriptAraña>().TakeDamage(attackDamage);
+            
            
         }
     }
@@ -58,10 +68,13 @@ public class WarriorAttacks : MonoBehaviour
 
         Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, _attackRange, EnemyLayers);
 
+        audioSource.PlayOneShot(swordAudio);
+
         foreach(Collider enemy in hitEnemies)
         {
             enemy.GetComponent<ScriptAraña>().TakeDamage(heavyAttackDamage);
             
+
         }
 
     }
@@ -76,10 +89,12 @@ public class WarriorAttacks : MonoBehaviour
 
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, _attackRange, EnemyLayers);
 
+            audioSource.PlayOneShot(swordAudio);
+
             foreach (Collider enemy in hitEnemies)
             {
-                enemy.GetComponent<ScriptAraña>().TakeDamage(chargeAttackDamage);
-
+                enemy.GetComponent<EnemyHP>().TakeDamage(chargeAttackDamage);
+                
             }
         }
     }
