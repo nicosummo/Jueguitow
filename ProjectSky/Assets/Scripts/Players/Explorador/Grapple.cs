@@ -22,7 +22,7 @@ public class Grapple : MonoBehaviour
     
     void Update()
     {
-        if(hook == null && Input.GetMouseButtonDown(0))
+        if(hook == null && Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             StopAllCoroutines();
             pulling = false;
