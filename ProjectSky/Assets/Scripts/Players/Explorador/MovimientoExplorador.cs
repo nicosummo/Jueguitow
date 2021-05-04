@@ -20,6 +20,8 @@ public class MovimientoExplorador : MonoBehaviour
 
     bool                    isGrounded;
 
+    private Lantern lantern;
+
     public Rigidbody        rb;
 
     public Transform        cam;
@@ -38,6 +40,8 @@ public class MovimientoExplorador : MonoBehaviour
         //Cursor.lockState = CursorLockMode.Locked;
         
         jumpAllowed = defaultJumpAllowed;
+
+        lantern = gameObject.GetComponent<Lantern>();
         
     }
 
@@ -47,6 +51,7 @@ public class MovimientoExplorador : MonoBehaviour
         {
             ExplorerMovement();
             Jump();
+            lantern.Flashlight();
         }
         
     }
