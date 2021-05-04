@@ -46,6 +46,8 @@ public class MovimientoPJ : MonoBehaviour
             Jump();
             cam = Camera.main.transform;
 
+            warriorAttacks.FireTimer();
+
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 warriorAttacks.Attack();
@@ -69,6 +71,11 @@ public class MovimientoPJ : MonoBehaviour
             else if (Input.GetKeyUp(KeyCode.Q) &&  warriorAttacks._timer >= 0)
             {
                 warriorAttacks.ChargingFailed();
+            }
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                warriorAttacks.FireAttack();
             }
         }
         

@@ -17,6 +17,11 @@ public class WarriorAttacks : MonoBehaviour
     public float _timer;
     public float _startTimer = 3f;
 
+    float       _fireTimer;
+    float       _startFireTimer = 3f;
+    public Transform firePoint;
+    public GameObject fireAttackPrefab;
+
     public AudioSource audioSource;
     public AudioClip swordAudio;
 
@@ -27,15 +32,6 @@ public class WarriorAttacks : MonoBehaviour
         _timer = _startTimer;
         swordAudio = Resources.Load<AudioClip>("Sword");
     }
-
-    private void Update()
-    {
-        HeavyAttack();
-
-
-    }
-
-    
 
     public void Attack()
     {
@@ -99,6 +95,8 @@ public class WarriorAttacks : MonoBehaviour
         }
     }
 
+    
+
     public void ChargingFailed()
     {
         _timer = _startTimer;
@@ -111,5 +109,19 @@ public class WarriorAttacks : MonoBehaviour
         animator.SetTrigger("Charging");
         
 
+    }
+
+    public void FireAttack()
+    {
+        if (_fireTimer <= 0)
+        {
+            Instantiate(fireAttackPrefab, firePoint.transform.position, firePoint.transform.rotation);
+            _fireTimer = _startFireTimer;
+        }
+    }
+
+    public void FireTimer()
+    {
+        _fireTimer -= Time.deltaTime;
     }
 }

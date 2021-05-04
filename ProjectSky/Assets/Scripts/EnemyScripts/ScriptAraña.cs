@@ -99,6 +99,14 @@ public class ScriptAraña : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("FireAttack"))
+        {
+            TakeDamage(5);
+        }
+    }
+
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null)
