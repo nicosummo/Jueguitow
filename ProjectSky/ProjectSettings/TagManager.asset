@@ -11,6 +11,7 @@ TagManager:
   - CosasGuerrero
   - Enemy
   - FireAttack
+  - Interactuable
   layers:
   - Default
   - TransparentFX

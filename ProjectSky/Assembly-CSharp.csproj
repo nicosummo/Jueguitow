@@ -63,7 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Interaccion.cs" />
     <Compile Include="Assets\Pausa.cs" />
+    <Compile Include="Assets\ResetPorCaida.cs" />
     <Compile Include="Assets\Scripts\Enemy1.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\AudioBigMonster.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\EnemyHP.cs" />
@@ -83,6 +85,7 @@
     <Compile Include="Assets\Scripts\Players\Explorador\Hook.cs" />
     <Compile Include="Assets\Scripts\Players\Explorador\Lantern.cs" />
     <Compile Include="Assets\Scripts\Players\Explorador\MovimientoExplorador.cs" />
+    <Compile Include="Assets\Scripts\Players\Interactuar.cs" />
     <Compile Include="Assets\Scripts\Players\TakeDamage.cs" />
     <Compile Include="Assets\Scripts\Players\Warrior\FireAttackPrefab.cs" />
     <Compile Include="Assets\Scripts\Players\Warrior\MovimientoPJ.cs" />
