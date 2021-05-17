@@ -30,6 +30,7 @@ public class CargadorNivel : MonoBehaviour
             yield return null;
         
         }
+        
     }
 
 }

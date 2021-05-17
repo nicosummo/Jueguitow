@@ -7,10 +7,12 @@ public class Pausa : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    public GameObject pauseButton;
 
     void Start()
     {
         pauseMenuUI.SetActive(false);
+        pauseButton.SetActive(true);
     }
 
     void Update()
@@ -33,16 +35,18 @@ public class Pausa : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        pauseButton.SetActive(true);
     }
 
-    void Pause()
+    public void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        pauseButton.SetActive(false);
     }
 
-    public void LoadMenu () //Va al menu inicio
+    public void LoadMenu() //Va al menu inicio
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
@@ -54,5 +58,7 @@ public class Pausa : MonoBehaviour
         Application.Quit();
     }
 
-
+   
 }
+
+
